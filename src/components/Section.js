@@ -1,11 +1,10 @@
 // import liraries
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Alert } from 'react-native';
+import { View, StyleSheet, Alert } from 'react-native';
 import { Card, List, ListItem, Icon, FormInput, FormLabel, Button } from 'react-native-elements';
 import { Actions } from 'react-native-router-flux';
 import { observer } from 'mobx-react/native';
 
-import SwitchCell from './SwitchCell';
 // create a component
 
 const renderRightIcon = type => {
