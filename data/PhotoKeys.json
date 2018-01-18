@@ -1,0 +1,38 @@
+[
+    {
+        "key": 101,
+        "sectionId": "documents",
+        "title": "Driver Licence - Photocard Front",
+        "fileName": "_photo_101.jpg"
+    },
+    {
+        "key": 102,
+        "sectionId": "documents",
+        "title": "VIN",
+        "fileName": "_photo_102.jpg"
+    },
+    {
+        "key": 103,
+        "sectionId": "documents",
+        "title": "No Claims",
+        "fileName": "_photo_103.jpg"
+    },
+    {
+        "key": 104,
+        "sectionId": "documents",
+        "title": "MOT Certificate",
+        "fileName": "_photo_104.jpg"
+    },
+    {
+        "key": 105,
+        "sectionId": "documents",
+        "title": "V5/Alternative Document",
+        "fileName": "_photo_105.jpg"
+    },
+    {
+        "key": 106,
+        "sectionId": "documents",
+        "title": "Driver Licence - Photocard Back",
+        "fileName": "_photo_106.jpg"
+    }
+]

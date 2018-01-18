@@ -1,0 +1,412 @@
+[
+    {
+        "title": "Risk Assessment",
+        "fields": [
+            {
+                "type": "SwitchCell",
+                "title": "Is the workplace free of children?",
+                "id": "child_in_road",
+                "value": true,
+                "switched": true
+            },
+            {
+                "type": "SwitchCell",
+                "title": "Is the workplace free of animals?",
+                "id": "animal_in_road",
+                "value": true,
+                "switched": true
+            },
+            {
+                "type": "SwitchCell",
+                "title": "Is it safe to park?",
+                "id": "safe_to_park",
+                "value": true,
+                "switched": true
+            },
+            {
+                "type": "SwitchCell",
+                "title": "Is it safe to work?",
+                "id": "safe_to_work",
+                "value": true,
+                "switched": true
+            },
+            {
+                "type": "SwitchCell",
+                "title": "Do you accept the risks?",
+                "id": "accept_risk",
+                "value": true,
+                "switched": true
+            }
+        ]
+    },
+    {
+        "title": "Policy Holder Documents",
+        "fields": [
+            {
+                "type": "photoCell",
+                "title": "V5/Alternative Document",
+                "id": "_photo_101.jpg",
+                "rightIcon": "photo-camera",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "photoCell",
+                "title": "Driver Licence - Photocard Front",
+                "id": "_photo_102.jpg",
+                "rightIcon": "photo-camera",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "photoCell",
+                "title": "Driver Licence - Photocard Back",
+                "id": "_photo_103.jpg",
+                "rightIcon": "photo-camera",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "photoCell",
+                "title": "No Claims",
+                "id": "_photo_104.jpg",
+                "rightIcon": "photo-camera",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "photoCell",
+                "title": "V5",
+                "id": "_photo_105.jpg",
+                "rightIcon": "photo-camera",
+                "value": null,
+                "required": false
+            }
+        ]
+    },
+    {
+        "title": "Pre-Action Checks",
+        "fields": [
+            {
+                "type": "photoCell",
+                "title": "Malfunctioning Lights / Electronics",
+                "id": "_photo_201.jpg",
+                "rightIcon": "photo-camera",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "photoCell",
+                "title": "Dashboard Warning Lights",
+                "id": "_photo_202.jpg",
+                "rightIcon": "photo-camera",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "photoCell",
+                "title": "Dashboard Interior/Trim Damage",
+                "id": "_photo_203.jpg",
+                "rightIcon": "photo-camera",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "photoCell",
+                "title": "Body or Glass Damage",
+                "id": "_photo_204.jpg",
+                "rightIcon": "photo-camera",
+                "value": null,
+                "required": true
+            }
+        ]
+    },
+    {
+        "title": "Pre-Action Photos",
+        "fields": [
+            {
+                "type": "photoCell",
+                "title": "VIN",
+                "id": "_photo_301.jpg",
+                "rightIcon": "photo-camera",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "photoCell",
+                "title": "Vehicle Front Off Side (driver side)",
+                "id": "_photo_302.jpg",
+                "rightIcon": "photo-camera",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "photoCell",
+                "title": "Vehicle From Near Side (passenger side)",
+                "id": "_photo_303.jpg",
+                "rightIcon": "photo-camera",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "photoCell",
+                "title": "Vehicle Rear Off Side (driver side)",
+                "id": "_photo_304.jpg",
+                "rightIcon": "photo-camera",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "photoCell",
+                "title": "Vehicle Rear Near Side (passenger side)",
+                "id": "_photo_305.jpg",
+                "rightIcon": "photo-camera",
+                "value": null,
+                "required": true
+            }
+        ]
+    },
+    {
+        "title": "Pre-Action Signature",
+        "fields": [
+            {
+                "type": "text",
+                "placeholder": "enter a number",
+                "title": "Mileage",
+                "id": "pre_cust_signature_miles",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "signature",
+                "title": "Customer Signature",
+                "id": "_photo_401.jpg",
+                "rightIcon": "gesture",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "SwitchCell",
+                "title": "Signed on behalf of policy holder",
+                "id": "pre_sign_proxy",
+                "value": null,
+                "switched": true
+            }
+        ]
+    },
+    {
+        "title": "Device Commissioning",
+        "fields": [
+            {
+                "type": "option",
+                "title": "Install Location",
+                "id": "install_location",
+                "novaluetext": "tap to select",
+                "value": null,
+                "required": true,
+                "options": [
+                    "Dash",
+                    "Passenger Side",
+                    "Dash, Centre",
+                    "Dash, Driver Side",
+                    "Centre Console Front",
+                    "Centre Console Rear",
+                    "Boot, Passenger Side",
+                    "Boot, Centre",
+                    "Boot, Driver Side",
+                    "Engine Bay"
+                ]
+            },
+            {
+                "type": "option",
+                "title": "Install Type",
+                "id": "typelocation",
+                "novaluetext": "tap to select",
+                "value": null,
+                "required": true,
+                "options": [
+                    "Plug-In (OBD)",
+                    "Hard-wired"
+                ]
+            },
+            {
+                "type": "SwitchCell",
+                "title": "Does the box have an external crash sensor?",
+                "id": "comm_crash_sensor",
+                "value": true,
+                "switched": true
+            },
+            {
+                "type": "option",
+                "title": "Crash Sensor Location",
+                "id": "crash_sensor_location",
+                "novaluetext": "tap to select",
+                "value": null,
+                "required": true,
+                "options": [
+                    "Plug-In (OBD)",
+                    "Hard-wired"
+                ]
+            },
+            {
+                "type": "button",
+                "title": "Scan bar/QR code",
+                "id": "comm_scan"
+            },
+            {
+                "type": "text",
+                "placeholder": "enter text",
+                "title": "IMEI",
+                "id": "comm_imei",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "text",
+                "placeholder": "enter text",
+                "title": "Serial",
+                "id": "comm_serial",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "text",
+                "placeholder": "enter text",
+                "title": "Mobile/Version Number",
+                "id": "comm_mobile",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "button",
+                "title": "Activate Box",
+                "id": "comm_activate"
+            }
+        ]
+    },
+    {
+        "title": "Action Photos",
+        "fields": [
+            {
+                "type": "photoCell",
+                "title": "Box Location",
+                "id": "_photo_501.jpg",
+                "rightIcon": "photo-camera",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "photoCell",
+                "title": "Earth Connection (+30)",
+                "id": "_photo_502.jpg",
+                "rightIcon": "photo-camera",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "photoCell",
+                "title": "Permanent Live Connection (+12)",
+                "id": "_photo_503.jpg",
+                "rightIcon": "photo-camera",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "photoCell",
+                "title": "Box ID Label (IMEI/SIM/erial)",
+                "id": "_photo_504.jpg",
+                "rightIcon": "photo-camera",
+                "value": null,
+                "required": true
+            }
+        ]
+    },
+    {
+        "title": "Post-Action Photos",
+        "fields": [
+            {
+                "type": "photoCell",
+                "title": "Vehicle Front Off Side (driver side)",
+                "id": "_photo_701.jpg",
+                "rightIcon": "add-a-photo",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "photoCell",
+                "title": "Vehicle From Near Side (passenger side)",
+                "id": "_photo_702.jpg",
+                "rightIcon": "add-a-photo",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "photoCell",
+                "title": "Vehicle Rear Off Side (driver side)",
+                "id": "_photo_703.jpg",
+                "rightIcon": "add-a-photo",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "photoCell",
+                "title": "Vehicle Rear Near Side (passenger side)",
+                "id": "_photo_704.jpg",
+                "rightIcon": "add-a-photo",
+                "value": null,
+                "required": true
+            }
+        ]
+    },
+    {
+        "title": "Post-Action Checks",
+        "fields": [
+            {
+                "type": "photoCell",
+                "title": "Add a photo for anything damaged caused during Action",
+                "id": "_photo_801.jpg",
+                "rightIcon": "photo-camera",
+                "value": null,
+                "required": false
+            }
+        ]
+    },
+    {
+        "title": "Post-Action Signatures",
+        "fields": [
+            {
+                "type": "signature",
+                "title": "Customer Signature",
+                "id": "_photo_403.jpg",
+                "rightIcon": "gesture",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "SwitchCell",
+                "title": "Signed on behalf of policy holder",
+                "id": "pre_sign_proxy",
+                "value": false,
+                "switched": false
+            },
+            {
+                "type": "signature",
+                "title": "Engineer Signature",
+                "id": "_photo_404.jpg",
+                "rightIcon": "gesture",
+                "value": null,
+                "required": true
+            }
+        ]
+    },
+    {
+        "title": "Submit Job",
+        "fields": [
+            {
+                "type": "button",
+                "title": "Send To Server",
+                "id": "submit"
+            },
+        ]
+    }
+]

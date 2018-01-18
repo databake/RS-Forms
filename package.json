@@ -1,0 +1,19 @@
+{
+  "main": "node_modules/expo/AppEntry.js",
+  "private": true,
+  "dependencies": {
+    "babel-eslint": "^8.2.1",
+    "eslint": "^4.15.0",
+    "eslint-config-expo": "^6.0.0-rc.5",
+    "expo": "^24.0.2",
+    "mobx": "^3.4.1",
+    "mobx-react": "^4.3.5",
+    "prettier": "^1.10.2",
+    "react": "16.0.0",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-24.0.0.tar.gz",
+    "react-native-elements": "^0.19.0",
+    "react-native-form": "^2.1.2",
+    "react-native-router-flux": "^4.0.0-beta.28"
+  },
+  "devDependencies": {}
+}
