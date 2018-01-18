@@ -5,7 +5,6 @@ import JobList from './scenes/JobList';
 import Job from './scenes/Job';
 import CameraViewFinder from './scenes/CameraViewFinder';
 import Signature from './scenes/Signature';
-import Options from './scenes/Options';
 
 export default () => (
   <Router>
@@ -16,7 +15,6 @@ export default () => (
       </Scene>
       <Scene key={'camera'} title="View Finder" component={CameraViewFinder} hideNavBar={false} />
       <Scene key={'signature'} title="Signature" component={Signature} hideNavBar={false} />
-      <Scene key={'options'} title="Options" component={Options} hideNavBar={false} />
     </Modal>
   </Router>
 );
