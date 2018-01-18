@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
 
-class JobListItem extends Component {
+class JobListItem extends React.Component {
   _onPress = () => {
     this.props.onPressItem(this.props.item);
   };
