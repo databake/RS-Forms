@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
 import { ScrollView, View } from 'react-native';
+import { observer, inject } from 'mobx-react';
 
 import Section from '../components/Section';
-import formStore from '../stores/formStore';
 
+@inject('formStore')
+@observer
 class Job extends Component {
+  static navigationOptions = ({ navigation }) => ({
+    title: `${navigation.state.params.item.job_type} | ${navigation.state.params.item.job_num}`,
+  });
   render() {
+    console.log(this.props);
+    const { formStore } = this.props;
     const { sections } = formStore;
     return (
       <ScrollView contentContainerStyle={{ paddingBottom: 20 }}>

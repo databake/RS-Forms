@@ -1,4 +1,5 @@
 import React from 'react';
+/*
 import { Router, Scene, Modal } from 'react-native-router-flux';
 
 import JobList from './scenes/JobList';
@@ -17,4 +18,20 @@ export default () => (
       <Scene key={'signature'} title="Signature" component={Signature} hideNavBar={false} />
     </Modal>
   </Router>
+
 );
+*/
+import { Provider } from 'mobx-react';
+
+import Stack from './router';
+import stores from './stores';
+
+export default class MobXApp extends React.Component {
+  render() {
+    return (
+      <Provider {...stores}>
+        <Stack />
+      </Provider>
+    );
+  }
+}

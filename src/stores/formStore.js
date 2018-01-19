@@ -2,7 +2,7 @@ import { observable, action } from 'mobx';
 import MockTemplate from '../../data/MockTemplate.json';
 import SectionModel from './SectionModel';
 
-class ObservableFormStore {
+export default class ObservableFormStore {
   @observable sections = [];
 
   constructor() {
@@ -22,6 +22,3 @@ class ObservableFormStore {
     });
   }
 }
-
-const formStore = new ObservableFormStore();
-export default formStore;

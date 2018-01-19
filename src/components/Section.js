@@ -1,23 +1,8 @@
 // import liraries
 import React, { Component } from 'react';
-import { View, StyleSheet, Alert } from 'react-native';
+import { View, Alert } from 'react-native';
 import { Card, List, ListItem, Icon, FormInput, FormLabel, Button } from 'react-native-elements';
-import { Actions } from 'react-native-router-flux';
 import { observer } from 'mobx-react/native';
-
-// create a component
-
-const renderRightIcon = type => {
-  const iconName = type === 'signature' ? 'security' : 'photo-camera';
-  return (
-    <Icon
-      name={iconName}
-      size={50}
-      color={'#bdc6cf'}
-      onPress={() => handleOnPressRightIcon(type)}
-    />
-  );
-};
 
 const renderRightTitle = (type, value, placeholder) => {
   if (type === 'option') {
@@ -40,39 +25,6 @@ const renderLeftIcon = (required, type, value) => {
   return <Icon name={iconName} size={50} color={iconColor} iconStyle={{ paddingRight: 10 }} />;
 };
 
-const handleOnPressRightIcon = type => {
-  switch (type) {
-    case 'photoCell':
-      Alert.alert(
-        'Options',
-        'What do you want to do?',
-        [
-          { text: 'Take Photo', onPress: () => console.log('Camera') },
-          { text: 'Add additional Photo', onPress: () => console.log('Album') },
-          { text: 'Remove Photo', onPress: () => console.log('Remove') },
-          {
-            text: 'Photo from Album',
-            onPress: () => console.log('Photo Album'),
-          },
-          {
-            text: 'Cancel',
-            style: 'cancel',
-            onPress: () => console.log('Cancel'),
-          },
-        ],
-        { cancelable: true }
-      );
-      // Actions.camera()
-      break;
-    case 'signature':
-      Actions.signature();
-      break;
-
-    default:
-      break;
-  }
-};
-
 const renderTitle = (title, type, placeholder) => {
   if (type === 'text') {
     return (
@@ -91,12 +43,61 @@ const renderTitle = (title, type, placeholder) => {
 
 @observer
 class Section extends Component {
-  optionSelected = (id, option) => {
+  _renderRightIcon = type => {
+    const iconName = type === 'signature' ? 'security' : 'photo-camera';
+    return (
+      <Icon
+        name={iconName}
+        size={50}
+        color={'#bdc6cf'}
+        onPress={() => this._handleOnPressRightIcon(type)}
+      />
+    );
+  };
+
+  _handleOnPressRightIcon = type => {
+    switch (type) {
+      case 'photoCell':
+        Alert.alert(
+          'Options',
+          'What do you want to do?',
+          [
+            { text: 'Take Photo', onPress: () => console.log('Camera') },
+            { text: 'Add additional Photo', onPress: () => console.log('Album') },
+            { text: 'Remove Photo', onPress: () => console.log('Remove') },
+            {
+              text: 'Photo from Album',
+              onPress: () => console.log('Photo Album'),
+            },
+            {
+              text: 'Cancel',
+              style: 'cancel',
+              onPress: () => console.log('Cancel'),
+            },
+          ],
+          { cancelable: true }
+        );
+        // Actions.camera()
+        break;
+      case 'signature':
+        {
+          const { navigate } = this.props.navigation;
+          navigate('Signature');
+        }
+        // Actions.signature();
+        break;
+
+      default:
+        break;
+    }
+  };
+
+  _optionSelected = (id, option) => {
     const { store } = this.props;
     store.update(id, option);
   };
 
-  handleRowPress = field => {
+  _handleRowPress = field => {
     const { type, options, id } = field;
     switch (type) {
       case 'option':
@@ -106,7 +107,7 @@ class Section extends Component {
           options.map(option => {
             return {
               text: option,
-              onPress: () => this.optionSelected(id, option),
+              onPress: () => this._optionSelected(id, option),
             };
           }),
           { cancelable: true }
@@ -134,7 +135,7 @@ class Section extends Component {
                 hideChevron={!field.rightIcon}
                 switched={type === 'SwitchCell' && field.value}
                 title={renderTitle(field.title, type, field.placeholder)}
-                rightIcon={renderRightIcon(type)}
+                rightIcon={this._renderRightIcon(type)}
                 containerStyle={{
                   height: type === 'SwitchCell' ? 50 : 80,
                   justifyContent: 'center',
@@ -142,7 +143,7 @@ class Section extends Component {
                 }}
                 leftIcon={renderLeftIcon(field.required, type, value)}
                 rightTitle={renderRightTitle(type, value, field.noValueText)}
-                onPress={() => this.handleRowPress(field)}
+                onPress={() => this._handleRowPress(field)}
               />
             );
           })}
@@ -151,16 +152,6 @@ class Section extends Component {
     );
   }
 }
-
-// define your styles
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#2c3e50',
-  },
-});
 
 // make this component available to the app
 export default Section;

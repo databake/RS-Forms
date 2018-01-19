@@ -2,12 +2,14 @@
 
 import React, { Component } from 'react';
 import { StyleSheet, View, FlatList } from 'react-native';
-import { Actions } from 'react-native-router-flux';
 
 import MockJobs from '../../data/MockJobs.json';
 import JobListItem from '../components/JobListItem';
 
 class JobList extends Component {
+  static navigationOptions = {
+    title: 'Jobs',
+  };
   state = { selected: (new Map(): Map<string, boolean>) };
 
   _keyExtractor = (item, index) => item.job_num;
@@ -21,7 +23,8 @@ class JobList extends Component {
       selected.set(job_num, !selected.get(job_num)); // toggle
       //   return { selected }
     });
-    Actions.job({ item });
+    const { navigate } = this.props.navigation;
+    navigate('Job', { item });
   };
 
   _renderItem = ({ item }) => (
