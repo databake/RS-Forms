@@ -10,8 +10,8 @@ class Job extends Component {
   static navigationOptions = ({ navigation }) => ({
     title: `${navigation.state.params.item.job_type} | ${navigation.state.params.item.job_num}`,
   });
+
   render() {
-    console.log(this.props);
     const { formStore } = this.props;
     const { sections } = formStore;
     return (
@@ -19,7 +19,14 @@ class Job extends Component {
         <View>
           {sections.map((section, i) => {
             return (
-              <Section key={i} title={section.title} fields={section.fields} store={formStore} />
+              <Section
+                key={i}
+                title={section.title}
+                fields={section.fields}
+                job_num={this.props.navigation.state.params.item.job_num}
+                store={formStore}
+                navigation={this.props.navigation} // unsure about this, might be better to delegate
+              />
             );
           })}
         </View>

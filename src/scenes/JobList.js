@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react';
 import { StyleSheet, View, FlatList } from 'react-native';
+// import { FileSystem } from 'expo';
 
 import MockJobs from '../../data/MockJobs.json';
 import JobListItem from '../components/JobListItem';
@@ -11,6 +12,18 @@ class JobList extends Component {
     title: 'Jobs',
   };
   state = { selected: (new Map(): Map<string, boolean>) };
+
+  /*
+  async componentWillMount() {
+    const documents = FileSystem.documentDirectory;
+    const options = {
+      md5: false,
+      size: true,
+    };
+    const fileInfo = await FileSystem.getInfoAsync(documents, options);
+    console.log('FileInfo', fileInfo);
+  }
+  */
 
   _keyExtractor = (item, index) => item.job_num;
 
