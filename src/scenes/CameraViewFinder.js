@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
-import { Constants, Camera, Permissions } from 'expo';
+import { Camera, Permissions } from 'expo';
 
 class CameraViewFinder extends React.Component {
   state = {
