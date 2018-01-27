@@ -6,6 +6,7 @@ import Signature from './scenes/Signature';
 import CameraViewFinder from './scenes/CameraViewFinder';
 import Scanner from './scenes/Scanner';
 import PhotoPicker from './scenes/PhotoPicker';
+import ActivateBox from './scenes/ActivateBox'
 
 const stackNavigatorConfig = {
   initialRouteName: 'Joblist',
@@ -19,6 +20,7 @@ export default StackNavigator(
     CameraViewFinder: { screen: CameraViewFinder },
     Scanner: { screen: Scanner },
     PhotoPicker: { screen: PhotoPicker },
+    ActivateBox: { screen: ActivateBox },
   },
   stackNavigatorConfig
 );

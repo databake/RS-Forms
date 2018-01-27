@@ -1,5 +1,5 @@
 import { observable, action } from 'mobx';
-import MockTemplate from '../../data/MockTemplate.json';
+import MockTemplate from '../../data/MockVFATemplate.json';
 import SectionModel from './SectionModel';
 
 export default class ObservableFormStore {

@@ -34,18 +34,39 @@ class Section extends Component {
     this._handleRowPress = this._handleRowPress.bind(this);
   }
 
-  componentDidMount() {
-    FileSystem.readDirectoryAsync(FileSystem.documentDirectory).then(photos => {
+  async componentDidMount() {
+    const folder = this._assetsFolder(1549, this.props.job_num);
+    try {
+      await this._checkJobFolders(1549, this.props.job_num);
+      const photos = await FileSystem.readDirectoryAsync(folder);
       this.setState({
         photos,
         loading: false,
       });
-    });
+    } catch (error) {
+      console.log('err', error);
+    }
   }
+
+  _checkJobFolders = async (engineerId, job_num) => {
+    const engineerJobFolder = `${FileSystem.documentDirectory}${engineerId}/${job_num}`;
+    const info = await FileSystem.getInfoAsync(engineerJobFolder, { mdf: false, size: false });
+    if (info.exists === 0) {
+      await FileSystem.makeDirectoryAsync(engineerJobFolder, { intermediates: true });
+    }
+  };
+
+  _assetsFolder = (engineerId, job_num) => {
+    return `${FileSystem.documentDirectory}${engineerId}/${job_num}/`;
+  };
 
   _onPressScan = () => {
     this.props.navigation.navigate('Scanner');
   };
+
+  _onPressActivate = () => {
+    this.props.navigation.navigate('ActivateBox');
+  }
 
   _renderTitle = (title, type, placeholder) => {
     if (type === 'text') {
@@ -64,7 +85,9 @@ class Section extends Component {
           large
           backgroundColor={'#313438'}
           borderRadius={4}
-          onPress={this._onPressScan}
+          onPress={
+            title.toLowerCase() === 'activate box' ? this._onPressActivate : this._onPressScan
+          }
         />
       );
     }
@@ -77,7 +100,9 @@ class Section extends Component {
     const photo = photos.filter(photo => {
       return photo === `${job_num}${photoId}`;
     });
+
     if (photo[0] !== undefined) {
+      const photoPath = this._getPhotoPath(job_num, photo);
       return (
         <Image
           style={{
@@ -86,7 +111,7 @@ class Section extends Component {
             resizeMode: 'contain',
           }}
           source={{
-            uri: `${FileSystem.documentDirectory}${photo[0]}`,
+            uri: photoPath,
           }}
           onPress={() => this._handleOnPressRightIcon(type, job_num)}
         />
@@ -167,7 +192,16 @@ class Section extends Component {
     }
   };
 
+  _getPhotoPath(job_num, photo) {
+    const folder = this._assetsFolder(1549, job_num);
+    const photoPath = `${folder}${photo[0]}`;
+    return photoPath;
+  }
+
   render() {
+    if (this.state.loading) {
+      return <View />;
+    }
     const { title, fields } = this.props;
     return (
       <Card title={title} dividerStyle={{ marginBottom: 0 }}>
@@ -201,5 +235,4 @@ class Section extends Component {
   }
 }
 
-// make this component available to the app
 export default Section;
