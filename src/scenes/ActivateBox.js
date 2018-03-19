@@ -1,22 +1,29 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { ScrollView, View } from 'react-native';
+import sections from '../../data/MockActivate.json';
+import APISection from '../components/APISection';
 
 class ActivateBox extends Component {
+
   render() {
     return (
-      <View style={styles.container}>
-        <Text>I am Activate Box</Text>
-      </View>
+      <ScrollView>
+        <View>
+          {sections.map((section, i) => {
+            return (
+              <APISection
+                key={i}
+                title={section.title}
+                fields={section.fields}
+                navigation={this.props.navigation}
+                onPress={this.props.onPress}
+              />
+            );
+          })}
+        </View>
+      </ScrollView>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
 
 export default ActivateBox;

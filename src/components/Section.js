@@ -3,6 +3,7 @@ import { View, Alert, Image } from 'react-native';
 import { Card, List, ListItem, Icon, FormInput, FormLabel, Button } from 'react-native-elements';
 import { observer } from 'mobx-react/native';
 import { FileSystem } from 'expo';
+import Snackbar from 'react-native-snackbar-component';
 
 const renderRightTitle = (type, value, placeholder) => {
   if (type === 'option') {
@@ -25,7 +26,7 @@ const renderLeftIcon = (required, type, value) => {
 
 @observer
 class Section extends Component {
-  state = { photos: [], loading: true };
+  state = { photos: [], loading: true, showSnack: false };
 
   constructor(props) {
     super(props);
@@ -64,18 +65,24 @@ class Section extends Component {
     this.props.navigation.navigate('Scanner');
   };
 
-  _onPressActivate = () => {
-    this.props.navigation.navigate('ActivateBox');
-  }
+  _onPressActivate = async () => {
+    // this.props.navigation.navigate('ActivateBox');
+    await this.props.store.activate();
+    this.setState({ showSnack: true });
+  };
 
-  _renderTitle = (title, type, placeholder) => {
+  _renderTitle = (title, type, placeholder, value) => {
     if (type === 'text') {
       return (
         <View>
           <FormLabel containerStyle={{ marginLeft: 0 }} labelStyle={{ marginLeft: 0 }}>
             {title}
           </FormLabel>
-          <FormInput placeholder={placeholder || 'enter text'} containerStyle={{ marginLeft: 0 }} />
+          <FormInput
+            placeholder={placeholder || 'enter text'}
+            containerStyle={{ marginLeft: 0 }}
+            value={value}
+          />
         </View>
       );
     } else if (type === 'button') {
@@ -85,6 +92,7 @@ class Section extends Component {
           large
           backgroundColor={'#313438'}
           borderRadius={4}
+          loading={title === 'Activate Box' ? this.props.store.fetchingData : false}
           onPress={
             title.toLowerCase() === 'activate box' ? this._onPressActivate : this._onPressScan
           }
@@ -207,7 +215,7 @@ class Section extends Component {
       <Card title={title} dividerStyle={{ marginBottom: 0 }}>
         <List containerStyle={{ marginTop: 0, borderTopWidth: 0 }}>
           {fields.map((field, i) => {
-            const { id, type, value, title, placeholder } = field;
+            const { id, type, value, title, placeHolder } = field;
             return (
               <ListItem
                 key={id}
@@ -216,7 +224,7 @@ class Section extends Component {
                 name={id}
                 hideChevron={!field.rightIcon}
                 switched={type === 'SwitchCell' && field.value}
-                title={this._renderTitle(title, type, placeholder)}
+                title={this._renderTitle(title, type, placeHolder, value)}
                 rightIcon={this._renderRightIcon(type, this.props.job_num, id)}
                 containerStyle={{
                   height: type === 'SwitchCell' ? 50 : 80,
@@ -230,6 +238,17 @@ class Section extends Component {
             );
           })}
         </List>
+        <Snackbar
+          visible={this.state.showSnack}
+          textMessage="Hello There!"
+          actionHandler={() => {
+            this.setState({ showSnack: false });
+          }}
+          actionText="let's go"
+          distanceCallback={distance => {
+            this.setState({ distance });
+          }}
+        />
       </Card>
     );
   }

@@ -1,0 +1,357 @@
+[
+    {
+        "title": "Information",
+        "fields": [
+            {
+                "type": "TextCell",
+                "title": "Fleet Number (3 or 4 digits)",
+                "id": "fleet_number",
+                "required": true
+            }
+        ]
+    },
+    {
+        "title": "Risk Assessment",
+        "fields": [
+            {
+                "type": "SwitchCell",
+                "title": "Is the steering wheel cover on?",
+                "id": "steering_wheel",
+                "value": true,
+                "switched": true
+            },
+            {
+                "type": "SwitchCell",
+                "title": "Are the wheel chucks in place?",
+                "id": "wheel_chucks",
+                "value": true,
+                "switched": true
+            }
+        ]
+    },
+    {
+        "title": "Quality Assessment",
+        "fields": [
+            {
+                "type": "SwitchCell",
+                "title": "Does the driver's screen fixed without movement?",
+                "id": "drivers_screen_move",
+                "value": true,
+                "switched": true
+            },
+            {
+                "type": "SwitchCell",
+                "title": "Is the periscope clear?",
+                "id": "periscope_clear",
+                "value": true,
+                "switched": true
+            },
+            {
+                "type": "SwitchCell",
+                "title": "Is the co-pilot bracketed?",
+                "id": "copilot_bracketed",
+                "value": true,
+                "switched": true
+            },
+            {
+                "type": "SwitchCell",
+                "title": "Is the co-pilot cabling, tied every 6 inches?",
+                "id": "copilot_tied",
+                "value": true,
+                "switched": true
+            },
+            {
+                "type": "SwitchCell",
+                "title": "Is the Init cabling in conduit?",
+                "id": "init_conduit",
+                "value": true,
+                "switched": true
+            },
+            {
+                "type": "SwitchCell",
+                "title": "Is there conduit going through every hole?",
+                "id": "all_holes_conduit",
+                "value": true,
+                "switched": true
+            }
+        ]
+    },
+    {
+        "title": "Bus Extended Status: Pre Action Check",
+        "fields": [
+            {
+                "type": "photoCell",
+                "title": "Driver's screen",
+                "id": "_photo_701.jpg",
+                "rightIcon": "add-a-photo",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "photoCell",
+                "title": "Periscope",
+                "id": "_photo_702.jpg",
+                "rightIcon": "add-a-photo",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "photoCell",
+                "title": "Co-pilot bracket",
+                "id": "_photo_703.jpg",
+                "rightIcon": "add-a-photo",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "photoCell",
+                "title": "Co-pilot cabling",
+                "id": "_photo_704.jpg",
+                "rightIcon": "add-a-photo",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "photoCell",
+                "title": "Printer cabling",
+                "id": "_photo_705.jpg",
+                "rightIcon": "add-a-photo",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "photoCell",
+                "title": "Init cabling",
+                "id": "_photo_706.jpg",
+                "rightIcon": "add-a-photo",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "photoCell",
+                "title": "Periscope entry Point",
+                "id": "_photo_707.jpg",
+                "rightIcon": "add-a-photo",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "photoCell",
+                "title": "Behind Driver's Cab #1",
+                "id": "_photo_708.jpg",
+                "rightIcon": "add-a-photo",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "photoCell",
+                "title": "Behind Driver's Cab #2",
+                "id": "_photo_709.jpg",
+                "rightIcon": "add-a-photo",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "photoCell",
+                "title": "Behind seat if double-decker",
+                "id": "_photo_710.jpg",
+                "rightIcon": "add-a-photo",
+                "value": null,
+                "required": false
+            },
+            {
+                "type": "photoCell",
+                "title": "Traffilog Cabling",
+                "id": "_photo_711.jpg",
+                "rightIcon": "add-a-photo",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "photoCell",
+                "title": "Door Wiring Conduit",
+                "id": "_photo_712.jpg",
+                "rightIcon": "add-a-photo",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "photoCell",
+                "title": "E400 Screen Bracket (before)",
+                "id": "_photo_713.jpg",
+                "rightIcon": "add-a-photo",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "photoCell",
+                "title": "E400 Screen Bracket (After)",
+                "id": "_photo_714.jpg",
+                "rightIcon": "add-a-photo",
+                "value": null,
+                "required": true
+            },
+        ]
+    },
+    {
+        "title": "Pre-Action Signature",
+        "fields": [
+            {
+                "type": "signature",
+                "title": "Customer Signature",
+                "id": "_photo_401.jpg",
+                "rightIcon": "gesture",
+                "value": null,
+                "required": true
+            }
+        ]
+    },
+    {
+        "title": "Post Action Check",
+        "fields": [
+            {
+                "type": "photoCell",
+                "title": "Driver's screen",
+                "id": "_photo_801.jpg",
+                "rightIcon": "add-a-photo",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "photoCell",
+                "title": "Periscope",
+                "id": "_photo_802.jpg",
+                "rightIcon": "add-a-photo",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "photoCell",
+                "title": "Co-pilot bracket",
+                "id": "_photo_803.jpg",
+                "rightIcon": "add-a-photo",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "photoCell",
+                "title": "Co-pilot cabling",
+                "id": "_photo_804.jpg",
+                "rightIcon": "add-a-photo",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "photoCell",
+                "title": "Printer cabling",
+                "id": "_photo_805.jpg",
+                "rightIcon": "add-a-photo",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "photoCell",
+                "title": "Init cabling",
+                "id": "_photo_806.jpg",
+                "rightIcon": "add-a-photo",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "photoCell",
+                "title": "Periscope entry Point",
+                "id": "_photo_807.jpg",
+                "rightIcon": "add-a-photo",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "photoCell",
+                "title": "Behind Driver's Cab #1",
+                "id": "_photo_808.jpg",
+                "rightIcon": "add-a-photo",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "photoCell",
+                "title": "Behind Driver's Cab #2",
+                "id": "_photo_809.jpg",
+                "rightIcon": "add-a-photo",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "photoCell",
+                "title": "Behind seat if double-decker",
+                "id": "_photo_810.jpg",
+                "rightIcon": "add-a-photo",
+                "value": null,
+                "required": false
+            },
+            {
+                "type": "photoCell",
+                "title": "Traffilog Cabling",
+                "id": "_photo_811.jpg",
+                "rightIcon": "add-a-photo",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "photoCell",
+                "title": "Door Wiring Conduit",
+                "id": "_photo_812.jpg",
+                "rightIcon": "add-a-photo",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "photoCell",
+                "title": "E400 Screen Bracket (before)",
+                "id": "_photo_813.jpg",
+                "rightIcon": "add-a-photo",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "photoCell",
+                "title": "E400 Screen Bracket (After)",
+                "id": "_photo_814.jpg",
+                "rightIcon": "add-a-photo",
+                "value": null,
+                "required": true
+            },
+        ]
+    },
+    {
+        "title": "Post-Action Signatures",
+        "fields": [
+            {
+                "type": "signature",
+                "title": "Customer Signature",
+                "id": "_photo_403.jpg",
+                "rightIcon": "gesture",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "signature",
+                "title": "Engineer Signature",
+                "id": "_photo_404.jpg",
+                "rightIcon": "gesture",
+                "value": null,
+                "required": true
+            }
+        ]
+    },
+    {
+        "title": "Submit Job",
+        "fields": [
+            {
+                "type": "button",
+                "title": "Send To Server",
+                "id": "submit"
+            }
+        ]
+    }
+]

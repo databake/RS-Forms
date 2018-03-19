@@ -243,7 +243,65 @@
         ]
     },
     {
-        "title": "Device Commissioning",
+        "title": "Bind de Box",
+        "fields": [
+            {
+                "type": "button",
+                "title": "Scan bar/QR code",
+                "id": "comm_scan"
+            },
+            {
+                "type": "text",
+                "placeholder": "enter text",
+                "title": "IMEI",
+                "id": "comm_imei",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "text",
+                "placeholder": "enter text",
+                "title": "Serial",
+                "id": "comm_serial",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "text",
+                "placeholder": "enter text",
+                "title": "Mobile/Version Number",
+                "id": "comm_mobile",
+                "value": null,
+                "required": true
+            },
+            {
+                "type": "button",
+                "title": "Bind me Baby",
+                "id": "comm_bind"
+            }
+        ]
+    },
+    {
+        "title": "Checks - from VFA getVerificationChecks",
+        "fields": [
+            {
+                "type": "SwitchCell",
+                "title": "Engine OFF Command Diagnostic",
+                "id": "engine_off_diagnostic",
+                "value": false,
+                "switched": true               
+            },
+            {
+                "type": "SwitchCell",
+                "title": "Engine ON Command Diagnostic",
+                "id": "engine_on_diagnostic",
+                "value": false,
+                "switched": true               
+            }
+        ]
+    },
+    {
+        "title": "Device Commissioning - From VFA installationTemplate",
         "fields": [
             {
                 "type": "option",
@@ -325,8 +383,8 @@
                 "required": true,
                 "novaluetext": "tap to select",
                 "options": [
-                    "No",
-                    "Yes"
+                    "Battery",
+                    "Car Body"
                 ]
             },
             {
@@ -337,8 +395,12 @@
                 "required": true,
                 "novaluetext": "tap to select",
                 "options": [
-                    "No",
-                    "Yes"
+                    "Blue",
+                    "Orange",
+                    "Pink",
+                    "White - Red",
+                    "White - Green",
+                    "Purple - Red"
                 ]
             },
             {
@@ -352,35 +414,6 @@
                     "No",
                     "Yes"
                 ]
-            },
-            {
-                "type": "button",
-                "title": "Scan bar/QR code",
-                "id": "comm_scan"
-            },
-            {
-                "type": "text",
-                "placeholder": "enter text",
-                "title": "IMEI",
-                "id": "comm_imei",
-                "value": null,
-                "required": true
-            },
-            {
-                "type": "text",
-                "placeholder": "enter text",
-                "title": "Serial",
-                "id": "comm_serial",
-                "value": null,
-                "required": true
-            },
-            {
-                "type": "text",
-                "placeholder": "enter text",
-                "title": "Mobile/Version Number",
-                "id": "comm_mobile",
-                "value": null,
-                "required": true
             },
             {
                 "type": "button",

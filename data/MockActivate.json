@@ -1,0 +1,49 @@
+[
+    {
+        "title": "Method: takeCharge",
+        "fields": [
+            {
+                "title": "Method Correctly Executed",
+                "id": "MethodCorrectlyExecuted",
+                "response": "Respond 200 OK",
+                "messageType": "success",
+                "message": "takeCharge success"
+            },
+            {
+                "title": "The parameter lockDuration is required",
+                "id": "LockDurationMissing",
+                "response": "Respond 200 OK",
+                "messageType": "success",
+                "message": "takeCharge success"
+            },
+            {
+                "title": "Appointment Not Found",
+                "id": "AppointmentNotFound",
+                "response": "Respond 200 OK",
+                "messageType": "success",
+                "message": "takeCharge success"
+            },
+            {
+                "title": "Installer Not Found",
+                "id": "InstallerNotFound",
+                "response": "Respond 200 OK",
+                "messageType": "success",
+                "message": "takeCharge success"
+            },
+            {
+                "title": "Appointment Not Assigned to the installer",
+                "id": "NotAssigned",
+                "response": "Respond 200 OK",
+                "messageType": "success",
+                "message": "takeCharge success"
+            },
+            {
+                "title": "Generic Error",
+                "id": "GenericError",
+                "response": "Respond 200 OK",
+                "messageType": "success",
+                "message": "takeCharge success"
+            }
+        ]
+    }
+]
