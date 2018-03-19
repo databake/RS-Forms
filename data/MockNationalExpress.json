@@ -190,7 +190,7 @@
                 "rightIcon": "add-a-photo",
                 "value": null,
                 "required": true
-            },
+            }
         ]
     },
     {
@@ -320,7 +320,7 @@
                 "rightIcon": "add-a-photo",
                 "value": null,
                 "required": true
-            },
+            }
         ]
     },
     {
